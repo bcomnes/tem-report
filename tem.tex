@@ -40,14 +40,19 @@ urlcolor=blue
 \usepackage{braket}
 \usepackage{cancel}
 \usepackage{acronym}
-\acrodef{tem}[TEM]{Transmission Electron Microscopy}
+\acrodef{stem}[STEM]{Scanning Transmission Electron Microscopy}
+\acrodef{tem}[STEM]{Transmission Electron Microscope}
 \acrodef{cemn}[CEMN]{Center for Electron Microscopy and Nanofabrication}
 \acrodef{edx}[EDX]{Energy-dispersive X-ray spectroscopy}
 % http://staff.science.uva.nl/~polko/HOWTO/LATEX/acronym.html 
 
+\usepackage{epstopdf}
+\epstopdfDeclareGraphicsRule{.tif}{png}{.png}{convert #1 \OutputFile}
+\AppendGraphicsExtensions{.tif}
+
 %\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
 
-\graphicspath{{Figures/}} % Specifies the directory where pictures are stored
+\graphicspath{Data/} % Specifies the directory where pictures are stored
 
 \title{TEM Report 2}
 \author{Bret Comnes}
@@ -59,118 +64,64 @@ urlcolor=blue
 
 \section{Introduction} % Major section
 
-This report will cover some basics concepts relating to \ac{tem}, as well as some simple analysis of data taken a student lab session at the \ac{cemn} at Portland State University on \date{May 16, 2014}.  Bright field \ac{tem} images, \ac{edx} data and point spectrum of the inspected sample are included.  Spectrum analysis is performed using last available freely distributed version of Fityk\cite{ft}: v.0.9.8.  Additional work was performed to build newer versions of Fityk from source for additional analysis  and add it to the Homebrew\cite{HB} package manager for future convenience.
+This report will cover some basics concepts relating to \ac{stem} and \ac{edx}, as well as some simple analysis of data taken a student lab session at the \ac{cemn} at Portland State University on \date{May 16, 2014}.  Bright field \ac{stem} images, \ac{edx} data and point spectrum of the inspected sample are included.  The data was collected using a FEI Technai \ac{tem} and the accompanying AZtec EDS acquisition and analysis tool.
 
-%------------------------------------------------
+Spectrum analysis is performed using last available freely distributed version of Fityk\cite{ft}: v.0.9.8.  Additional work was performed to build newer versions of Fityk from source for additional analysis  and add it to the Homebrew\cite{HB} package manager for future convenience.
 
-\subsection{Subsection 1} % Sub-section
 
-\lipsum[1] % Dummy text
+\section{\ac{stem} Fundamentals} % (fold)
+\label{sec:stem}
 
-%------------------------------------------------
+Stem stuff
 
-\subsection{Subsection 2} % Sub-section
+% section stem (end)
 
-\lipsum[2] % Dummy text
 
-%------------------------------------------------
+\section{\ac{edx} fundamentals} % (fold)
+\label{sec:edx}
 
-\subsubsection{Subsubsection 1} % Sub-sub-section
+edx stuff
 
-\lipsum[3] % Dummy text
+% section acedx_fundamentals (end)
 
-\begin{figure}[H] % Example image
-\center{\includegraphics[width=0.5\linewidth]{placeholder}}
-\caption{Example image.}
-\label{fig:speciation}
+\section{Data Analysis} % (fold)
+\label{sec:data_analysis}
+
+We collected bright field TEM images of a Iron Oxide ($Fe_3O_4$) particles coated with Silicon dioxide ($SiO_2$).  Additionally, we collected \ac{edx} spectrum information and mapped the location of these different elements using the AZtec software.  The data was explored in a limited manner use the Fityk software.  Unfortunately the \ac{stem} images were lost in the process of exporting data and cannot be included.
+
+\subsection{TEM imaging} % (fold)
+\label{sub:tem_imaging}
+
+Bright field images of Iron Oxide particles coated with Silicon dioxide.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{Data/Fe3O4-SiO2-0001.eps}
+  \caption{caption}
+  \label{fig:label}
 \end{figure}
 
-%------------------------------------------------
+% subsection tem_imaging (end)
 
-\subsubsection{Subsubsection 2} % Sub-sub-section
+\subsection{EDX Spectroscopy} % (fold)
+\label{sub:edx_spectroscopy}
 
-\lipsum[4] % Dummy text
+% subsection edx_spectroscopy (end)
 
-%----------------------------------------------------------------------------------------
-%	MAJOR SECTION 1
-%----------------------------------------------------------------------------------------
+\subsection{EDS Maps} % (fold)
+\label{sub:eds_maps}
 
-\section{Content Section} % Major section
+% subsection eds_maps (end)
 
-hi!Gil~\cite{Gil:02}
-
-\lipsum[5] % Dummy text
-
-%------------------------------------------------
-
-\subsection{Subsection 1} % Sub-section
-
-\subsubsection{Subsubsection 1} % Sub-sub-section
-
-\lipsum[6] % Dummy text
-
-%------------------------------------------------
-
-\subsubsection{Subsubsection 2} % Sub-sub-section
-
-\lipsum[6] % Dummy text
-\begin{wrapfigure}{l}{0.4\textwidth} % Inline image example
-  \begin{center}
-    \includegraphics[width=0.38\textwidth]{fish}
-  \end{center}
-  \caption{Fish}
-\end{wrapfigure}
-\lipsum[7-8] % Dummy text
-
-%------------------------------------------------
-
-\subsubsection{Subsubsection 3} % Sub-sub-section
-
-\begin{description} % Numbered list example
-
-\item[First] \hfill \\
-\lipsum[9] % Dummy text
-
-\item[Second] \hfill \\
-\lipsum[10] % Dummy text
-
-\item[Third] \hfill \\
-\lipsum[11] % Dummy text
-
-\end{description} 
-
-%----------------------------------------------------------------------------------------
-%	MAJOR SECTION X - TEMPLATE - UNCOMMENT AND FILL IN
-%----------------------------------------------------------------------------------------
-
-%\section{Content Section}
-
-%\subsection{Subsection 1} % Sub-section
-
-% Content
-
-%------------------------------------------------
-
-%\subsection{Subsection 2} % Sub-section
-
-% Content
-
-%----------------------------------------------------------------------------------------
-%	CONCLUSION
-%----------------------------------------------------------------------------------------
+% section data_analysis (end)
 
 \section{Conclusion} % Major section
 
-\lipsum[12-13]
 
-%----------------------------------------------------------------------------------------
-%	BIBLIOGRAPHY
-%----------------------------------------------------------------------------------------
+Conclusion statements
 
 
 \bibliography{main} 
 \bibliographystyle{plain} \nocite{*}
-
-%----------------------------------------------------------------------------------------
 
 \end{document}
