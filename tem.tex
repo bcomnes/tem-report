@@ -1,65 +1,45 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Simple Sectioned Essay Template
-% LaTeX Template
-%
-% This template has been downloaded from:
-% http://www.latextemplates.com
-%
-% Note:
-% The \lipsum[#] commands throughout this template generate dummy text
-% to fill the template out. These commands should all be removed when 
-% writing essay content.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-
-\documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
-
-\usepackage{geometry} % Required to change the page size to A4
-\geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
-
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=2cm]{geometry}
 \usepackage{graphicx} % Required for including pictures
-
 \usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
 \usepackage{wrapfig} % Allows in-line images such as the example fish picture
-
-\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
-
 \usepackage{color}
 \usepackage{mathtools}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{titling}
+\usepackage{braket}
+\usepackage{cancel}
+\usepackage{acronym}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage[space]{grffile} % allows file names with spaces
+
 \hypersetup{
 colorlinks=true,
 linkcolor=blue,
 urlcolor=blue
 }
-\usepackage{braket}
-\usepackage{cancel}
-\usepackage{acronym}
+
 \acrodef{stem}[STEM]{Scanning Transmission Electron Microscopy}
 \acrodef{tem}[STEM]{Transmission Electron Microscope}
 \acrodef{cemn}[CEMN]{Center for Electron Microscopy and Nanofabrication}
 \acrodef{edx}[EDX]{Energy-dispersive X-ray spectroscopy}
 % http://staff.science.uva.nl/~polko/HOWTO/LATEX/acronym.html 
 
-\usepackage{epstopdf}
-\epstopdfDeclareGraphicsRule{.tif}{png}{.png}{convert #1 \OutputFile}
-\AppendGraphicsExtensions{.tif}
-
 %\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
 
-\graphicspath{Data/} % Specifies the directory where pictures are stored
+\graphicspath{{Data/}} % Specifies the directory where pictures are stored
 
 \title{TEM Report 2}
 \author{Bret Comnes}
 \date{\today}
+\posttitle{\par\end{center}}
+\setlength{\droptitle}{-10pt}
 
 
 \begin{document}
+
 \maketitle
 
 \section{Introduction} % Major section
@@ -94,11 +74,36 @@ We collected bright field TEM images of a Iron Oxide ($Fe_3O_4$) particles coate
 
 Bright field images of Iron Oxide particles coated with Silicon dioxide.
 
-\begin{figure}[htbp]
+
+
+\begin{figure}
   \centering
-  \includegraphics[width=0.95\textwidth]{Data/Fe3O4-SiO2-0001.eps}
-  \caption{caption}
-  \label{fig:label}
+  
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Data/Fe3O4-SiO2-0001.png}
+    \caption{A gull}
+    \label{fig:gull}
+  \end{subfigure}%
+  ~
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Data/Fe3O4-SiO2-0002.png}
+    \caption{A tiger}
+    \label{fig:tiger}
+  \end{subfigure}
+  
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Data/Fe3O4-SiO2-0003.png}
+    \caption{A mouse}
+    \label{fig:mouse}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Data/Fe3O4-SiO2-0003-zoom.png}
+    \caption{A mouse}
+    \label{fig:Zoom}
+  \end{subfigure}
+  
+  \caption{Pictures of animals}\label{fig:brightfield}
 \end{figure}
 
 % subsection tem_imaging (end)
@@ -106,10 +111,38 @@ Bright field images of Iron Oxide particles coated with Silicon dioxide.
 \subsection{EDX Spectroscopy} % (fold)
 \label{sub:edx_spectroscopy}
 
+
+
 % subsection edx_spectroscopy (end)
 
 \subsection{EDS Maps} % (fold)
 \label{sub:eds_maps}
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.35\textwidth}
+    \includegraphics[width=\textwidth]{Data/Map.png}
+    \caption{Map of $Fe$, $Si$ and $O$}
+    \label{fig:map}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.35\textwidth}
+    \includegraphics[width=\textwidth]{Data/Si Map.png}
+    \caption{Map of $Si$}
+    \label{fig:si_map}
+  \end{subfigure}
+
+  \begin{subfigure}[b]{0.35\textwidth}
+    \includegraphics[width=\textwidth]{Data/Fe Map.png}
+    \caption{Map of $Fe$}
+    \label{fig:fe_map}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.35\textwidth}
+    \includegraphics[width=\textwidth]{Data/O Map.png}
+    \caption{Map of $O$}
+    \label{fig:o_map}
+  \end{subfigure}
+  \caption{EDX Maps of Particle Sample}\label{fig:map_grid}
+\end{figure}
 
 % subsection eds_maps (end)
 
