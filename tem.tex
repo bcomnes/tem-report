@@ -14,6 +14,7 @@
 \usepackage{subcaption}
 \usepackage{caption}
 \usepackage[space]{grffile} % allows file names with spaces
+\usepackage{lipsum}
 
 \hypersetup{
 colorlinks=true,
@@ -52,15 +53,21 @@ Spectrum analysis is performed using last available freely distributed version o
 \section{\ac{stem} Fundamentals} % (fold)
 \label{sec:stem}
 
-Stem stuff
+\lipsum[6] % Dummy text
 
+
+\lipsum[6] % Dummy text
 % section stem (end)
 
 
 \section{\ac{edx} fundamentals} % (fold)
 \label{sec:edx}
 
-edx stuff
+\lipsum[6] % Dummy text
+
+\lipsum[6] % Dummy text
+
+\lipsum[6] % Dummy text
 
 % section acedx_fundamentals (end)
 
@@ -72,38 +79,42 @@ We collected bright field TEM images of a Iron Oxide ($Fe_3O_4$) particles coate
 \subsection{TEM imaging} % (fold)
 \label{sub:tem_imaging}
 
-Bright field images of Iron Oxide particles coated with Silicon dioxide.
+Bright field images of Iron Oxide particles coated with Silicon dioxide were taken.  \ac{tem} imaging consists of illuminating thin samples that are semi electron transparent with a focused electron beam to project an image of the sample onto a viewing screen or camera.
+
+\lipsum[6] % Dummy text
+
+\lipsum[6] % Dummy text
+
+\lipsum[6] % Dummy text
+
+\lipsum[6] % Dummy text
+
+\lipsum[6] % Dummy text
 
 
 
-\begin{figure}
+\begin{figure}[htbp]
   \centering
   
   \begin{subfigure}[b]{0.45\textwidth}
     \includegraphics[width=\textwidth]{Data/Fe3O4-SiO2-0001.png}
-    \caption{A gull}
-    \label{fig:gull}
   \end{subfigure}%
-  ~
   \begin{subfigure}[b]{0.45\textwidth}
     \includegraphics[width=\textwidth]{Data/Fe3O4-SiO2-0002.png}
-    \caption{A tiger}
-    \label{fig:tiger}
   \end{subfigure}
   
   \begin{subfigure}[b]{0.45\textwidth}
     \includegraphics[width=\textwidth]{Data/Fe3O4-SiO2-0003.png}
-    \caption{A mouse}
-    \label{fig:mouse}
+    \caption{Visible lattice pattern}
+    \label{fig:viewc}
   \end{subfigure}
-  ~
   \begin{subfigure}[b]{0.45\textwidth}
     \includegraphics[width=\textwidth]{Data/Fe3O4-SiO2-0003-zoom.png}
-    \caption{A mouse}
-    \label{fig:Zoom}
+    \caption{Magnified view of \ref{fig:viewc}.  }
+    \label{fig:zoom}
   \end{subfigure}
   
-  \caption{Pictures of animals}\label{fig:brightfield}
+  \caption{Bright field Images of $SiO_2$ coated $Fe_3O_4$ particles}\label{fig:brightfield}
 \end{figure}
 
 % subsection tem_imaging (end)
@@ -111,18 +122,62 @@ Bright field images of Iron Oxide particles coated with Silicon dioxide.
 \subsection{EDX Spectroscopy} % (fold)
 \label{sub:edx_spectroscopy}
 
+\lipsum[6] % Dummy text
 
+\lipsum[6] % Dummy text
+
+\lipsum[6] % Dummy text
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{Data/EDS Spectrum.png}
+    \caption{EDX Spectrum from AZtec}
+    \label{fig:aztec}
+  \end{subfigure}%
+
+  \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{Data/full.png}
+    \caption{Fitted EDX Spectrum from Fityk}
+    \label{fig:fitk}
+  \end{subfigure}%
+
+  \caption{EDX Spectroscopy Data}
+  \label{fig:edx}
+\end{wrapfigure}
+
+\begin{figure}[htbp]
+  \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Data/crossover.png}
+    \caption{False peak between $Fe$ and $Cu$ peaks.}
+    \label{fig:cross}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Data/outer_peak.png}
+    \caption{Close up of outer $Fe$ and $Cu$ peaks.}
+    \label{fig:outer}
+  \end{subfigure}%
+  \caption{Close up of fitted data in Fityk}
+  \label{fig:fit}
+\end{figure}
 
 % subsection edx_spectroscopy (end)
 
 \subsection{EDS Maps} % (fold)
 \label{sub:eds_maps}
 
-\begin{figure}
+\lipsum[6] % Dummy text
+
+\lipsum[6] % Dummy text
+
+\lipsum[6] % Dummy text
+
+\begin{figure}[htbp]
   \centering
   \begin{subfigure}[b]{0.35\textwidth}
     \includegraphics[width=\textwidth]{Data/Map.png}
-    \caption{Map of $Fe$, $Si$ and $O$}
+    \caption{Composite Element Map}
     \label{fig:map}
   \end{subfigure}
   \begin{subfigure}[b]{0.35\textwidth}
@@ -148,11 +203,20 @@ Bright field images of Iron Oxide particles coated with Silicon dioxide.
 
 % section data_analysis (end)
 
+\section{Fityk Added to Homebrew} % (fold)
+\label{sec:fityk_homebrew}
+
+Upon discovering that newer Fityk versions were only offered as runnable binaries for paying subscribers, a simple \texttt{ruby} formula was submitted as a pull request to the Homebrew Science repository.  Homebrew is a popular 3rd party package manager for Mac OS X that manages the building and installation of open source software packages.  Upon the writing of this paper, the pull request was waiting for approval discussions with maintainers about acceptance sounded positive.  This will allow others to simply install the latest version of Fityk from the command line by running \texttt{\$ brew install fityk}.  A formula for the Fityk dependency, \texttt{xylib}, was also submitted to the \texttt{homebrew-science} repository.
+
+% section fityk_homebrew (end)
+
 \section{Conclusion} % Major section
 
+\lipsum[6] % Dummy text
 
-Conclusion statements
+\lipsum[6] % Dummy text
 
+\lipsum[6] % Dummy text
 
 \bibliography{main} 
 \bibliographystyle{plain} \nocite{*}
