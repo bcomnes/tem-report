@@ -48,7 +48,7 @@ urlcolor=blue
 
 This report will cover some basics concepts relating to \ac{stem} and \ac{edx}, as well as some simple analysis of data taken a student lab session at the \ac{cemn} at Portland State University on May 16, 2014.  Bright field \ac{stem} images, \ac{edx} data and point spectrum of the inspected sample are included.  The data was collected using a FEI Technai \ac{tem} and the accompanying AZtec EDS acquisition and analysis tool.
 
-Spectrum analysis is performed using last available freely distributed version of Fityk\cite{ft}: v.1.2.9.  Additional work was performed to build newer versions of Fityk from source and add it to the Homebrew\cite{home} package manager for future convenience of other students and researches.
+Spectrum analysis is performed using latest version of Fityk\cite{ft}: v.1.2.9.  Additional work was performed to build newer versions of Fityk from source and add it to the Homebrew\cite{home} package manager for future convenience of other students and researches.
 
 
 \section{\ac{stem} Fundamentals} % (fold)
@@ -121,7 +121,7 @@ The two spectrum plots look very similar.  It seems like AZtec is doing some kin
 
 There is a small peak identified by the AZtec software for $Cu$ next to these peaks, but this was barely visible.  Further on we see our $Si$ peak loud and clear
 
-Further out on the spectra (Figure~\ref{fig:outer}) we see a strong peak and weaker peak for $Fe$ as well as a peak for $Cu$.  The $Cu$ peaks are expected as our sample holder is made out of copper so this accounts and confirms our preexisting understanding of the composition of our sample!
+Further out on the spectra (Figure~\ref{fig:outer}) we see a strong peak and weaker peak for $Fe$ as well as a peak for $Cu$.  There is one additional peak that appears in our Fityk plot that isn't seen in the AZtec view.  This is possibly due to a limited view on the AZtec software or the fact that this outer peak is so negligible that it isn't worth noting.  The $Cu$ peaks are expected as our sample holder is made out of copper so this accounts and confirms our preexisting understanding of the composition of our sample!
 
 \begin{wrapfigure}{r}{0.5\textwidth}
   \begin{subfigure}[b]{0.5\textwidth}
@@ -162,8 +162,6 @@ Further out on the spectra (Figure~\ref{fig:outer}) we see a strong peak and wea
 \subsection{EDS Maps} % (fold)
 \label{sub:eds_maps}
 
-
-
 \begin{figure}[htbp]
   \centering
   \begin{subfigure}[b]{0.35\textwidth}
@@ -172,15 +170,15 @@ Further out on the spectra (Figure~\ref{fig:outer}) we see a strong peak and wea
     \label{fig:map}
   \end{subfigure}
   \begin{subfigure}[b]{0.35\textwidth}
-    \includegraphics[width=\textwidth]{Data/Si Map.png}
-    \caption{Map of $Si$}
-    \label{fig:si_map}
-  \end{subfigure}
-
-  \begin{subfigure}[b]{0.35\textwidth}
     \includegraphics[width=\textwidth]{Data/Fe Map.png}
     \caption{Map of $Fe$}
     \label{fig:fe_map}
+  \end{subfigure}
+  
+  \begin{subfigure}[b]{0.35\textwidth}
+    \includegraphics[width=\textwidth]{Data/Si Map.png}
+    \caption{Map of $Si$}
+    \label{fig:si_map}
   \end{subfigure}
   \begin{subfigure}[b]{0.35\textwidth}
     \includegraphics[width=\textwidth]{Data/O Map.png}
@@ -190,6 +188,17 @@ Further out on the spectra (Figure~\ref{fig:outer}) we see a strong peak and wea
   \caption{EDX Maps of Particle Sample}\label{fig:map_grid}
 \end{figure}
 
+The \ac{edx} maps are shown in Figure~\ref{fig:map_grid}.  Unfortunately the underlying \ac{stem} image that could be superimposed below these maps was not preserved during export.  It was, however, similar to images seen in Figure~\ref{fig:brightfield} which can give a feel for the overall structure of the particles.  From these bright field images, note the darker inner structure which appears surrounded by a more transparent outer layer.
+
+These maps are generated using \ac{edx} readings for different wavelengths at different positions on our sample.  This is done by imaging in \ac{stem} mode and correlating the \ac{edx} reading to that particular pixel.
+
+The composite map in Figure~\ref{fig:map} is a bit difficult to read but shows the mapping of all three elements: $Fe$, $Si$ and $O$ to the position on our sample.  It gives some idea of reading density, but it is still hard to see much underlying structure.
+
+Figure~\ref{fig:fe_map} of the $Fe$ mapping gives the best picture of underlying structure although without the underlying \ac{stem} image it will require some imagination and comparison to Figure~\ref{fig:brightfield}.  The blue dots follow the shape of the darker inner structure of the particle, with a higher density of readings near the center indicating thickness of the particle near the center.  This daker core of the particle appears to be the $Fe$ and is consistent with our understanding of the sample wich is coated samples made up of $Fe$.
+
+Looking that the map of $Si$ in Figure~\ref{fig:si_map}, we can see a larger outer structure which lines up with the more transparent coating around the darker inner core of the sample.  Its less dense around edges of the outer transparent section and less dense in the middle of the darker feature in the BF image.  It become most dense around the waist of the darker feature.  This seems to indicate that this might be a coating of some kind, with additional accumulation between the $Fe$ particles and not as tick at the cross section of the Iron particle.
+
+Finally, the mapping of $O$ in Figure~\ref{fig:o_map} seems to be additive of both the $Fe$ detections and the $Si$ detections.  Its less dense around the edge of the outer surface ($Si$), becomes more dense when there is additional accumulation of $Si$ between the $Fe$ particles and the most dense around the $Fe$ particle covered in $Si$.  Perhaps this effect is purely additive due to the higher counts of both the $Fe_3O_4$ and $SiO_2$.
 % subsection eds_maps (end)
 
 % section data_analysis (end)
@@ -197,19 +206,22 @@ Further out on the spectra (Figure~\ref{fig:outer}) we see a strong peak and wea
 \section{Fityk Added to Homebrew} % (fold)
 \label{sec:fityk_homebrew}
 
-Upon discovering that newer Fityk versions were only offered as runnable binaries for paying subscribers that required a hefty fee, a simple \texttt{ruby} formula was submitted as a pull request to the Homebrew Science repository\cite{hbs}.  
+Upon discovering that newer Fityk versions were only offered as runnable binaries for paying subscriptions that required a hefty fee, a simple \texttt{ruby} formula was submitted as a pull request to the Homebrew Science repository\cite{hbs}.
 
-Homebrew\cite{home} is a popular 3rd party package manager for Mac OS X that manages the building and installation of open source software packages.  Upon the writing of this paper, the pull request was waiting for approval discussions with maintainers about acceptance sounded positive\cite{fpr}.  This will allow others to simply install the latest version of Fityk from the command line by running \texttt{\$ brew install fityk}.  A formula for the Fityk dependency, \texttt{xylib}, was also submitted to the \texttt{homebrew-science} repository\cite{xpr}.
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\textwidth]{Data/Screen shot 2014-05-26 at 7.33.21 PM.png}
+  \caption{Homebrew Package Info on Fityk}
+  \label{fig:homebrew}
+\end{wrapfigure}
+
+Homebrew\cite{home} is a popular 3rd party package manager for Mac OS X that manages the building and installation of open source software packages.  Upon the writing of this paper, the pull request was waiting for approval.  Discussions with maintainers about acceptance, however, sounded positive\cite{fpr}.  This will allow others to simply install the latest version of Fityk from the command line by running \texttt{\$ brew install fityk}.  A formula for the Fityk dependency, \texttt{xylib}, was also submitted to the \texttt{homebrew-science} repository\cite{xpr}. 
 
 % section fityk_homebrew (end)
 
 \section{Conclusion} % Major section
 
-\lipsum[6] % Dummy text
-
-\lipsum[6] % Dummy text
-
-\lipsum[6] % Dummy text
+We successfully took bright field images of $SiO_2$ coated $Fe_3O_4$ particles featuring details of the crystal lattice structure, took \ac{edx} spectra confirming our understanding of the sample composition.  Finally we took a mapping of the sample composition using the \ac{tem} in \ac{stem} mode.  The data was explored somewhat additionally using the Fityk software and additional effort was exerted to increase accessibility to later versions of the Fityk software through the use of the Homebrew Package manager.
 
 \bibliography{main} 
 \bibliographystyle{plain} \nocite{*}
