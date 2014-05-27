@@ -23,9 +23,10 @@ urlcolor=blue
 }
 
 \acrodef{stem}[STEM]{Scanning Transmission Electron Microscopy}
-\acrodef{tem}[STEM]{Transmission Electron Microscope}
+\acrodef{tem}[TEM]{Transmission Electron Microscope}
 \acrodef{cemn}[CEMN]{Center for Electron Microscopy and Nanofabrication}
 \acrodef{edx}[EDX]{Energy-dispersive X-ray spectroscopy}
+\acrodef{sem}[SEM]{Scanning Electron Microscope}
 % http://staff.science.uva.nl/~polko/HOWTO/LATEX/acronym.html 
 
 %\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
@@ -45,30 +46,28 @@ urlcolor=blue
 
 \section{Introduction} % Major section
 
-This report will cover some basics concepts relating to \ac{stem} and \ac{edx}, as well as some simple analysis of data taken a student lab session at the \ac{cemn} at Portland State University on \date{May 16, 2014}.  Bright field \ac{stem} images, \ac{edx} data and point spectrum of the inspected sample are included.  The data was collected using a FEI Technai \ac{tem} and the accompanying AZtec EDS acquisition and analysis tool.
+This report will cover some basics concepts relating to \ac{stem} and \ac{edx}, as well as some simple analysis of data taken a student lab session at the \ac{cemn} at Portland State University on May 16, 2014.  Bright field \ac{stem} images, \ac{edx} data and point spectrum of the inspected sample are included.  The data was collected using a FEI Technai \ac{tem} and the accompanying AZtec EDS acquisition and analysis tool.
 
-Spectrum analysis is performed using last available freely distributed version of Fityk\cite{ft}: v.0.9.8.  Additional work was performed to build newer versions of Fityk from source for additional analysis  and add it to the Homebrew\cite{HB} package manager for future convenience.
+Spectrum analysis is performed using last available freely distributed version of Fityk\cite{ft}: v.1.2.9.  Additional work was performed to build newer versions of Fityk from source and add it to the Homebrew\cite{home} package manager for future convenience of other students and researches.
 
 
 \section{\ac{stem} Fundamentals} % (fold)
 \label{sec:stem}
 
-\lipsum[6] % Dummy text
+\ac{stem} uses the formation of a fine point of electrons rastering across the sample to provide information about specific points of the specimen.  This allows for mapping of \ac{edx} to specific points of the sample as well as limiting radiation exposure to smaller well defined sections of the sample.  Scanning coils are used to horizontally scan the beam across the surface as apposed to pivoting around a point like you would find in an \ac{sem}.
 
+Because \ac{stem} images are formed by a raster scan, instead of using lenses to form an image, we no longer have to worry about defects in our lenses which can cause issues like chromatic aberration in thick samples.  Magnification of \ac{stem} images are determined by scan geometry.  While \ac{stem} can provide better contrast, images tend to be noisier than \ac{tem} mode images.  \cite{tem}  
 
-\lipsum[6] % Dummy text
-% section stem (end)
-
+\ac{stem} can generate both bright field and dark field images.  \ac{stem} actually provides images with less noise and better contrast than \ac{tem} but at the cost of lower resolution.  This can be useful for thick or unstained samples which provide very little image details and require the higher contrast \ac{stem} provides.  \ac{stem} gives more flexibility over the contrast of images because it allows control over things like detector gain and contrast/brightness settings that are not available on the analog \ac{tem} screen  (however you can always digitalis images from the normal \ac{tem} mode and apply post processing to your images to enhance contrast).  
 
 \section{\ac{edx} fundamentals} % (fold)
 \label{sec:edx}
 
-\lipsum[6] % Dummy text
+\ac{edx} allows for detection of the chemical composition of samples.  It can be used with \ac{stem} to map chemical composition to specific locations on the sample.  Electrons are a type of ionizing radiation, meaning, that it can cause inner shell electrons in the sample to be ejected, resulting in secondary signals that contain useful information.  \ac{edx} uses the secondary X-rays ejected due to \ac{tem} radiation to plot the characteristic peaks of the elements contained within a sample.   
 
-\lipsum[6] % Dummy text
+\ac{edx} is a form of spectroscopy, so detects and distinguishes x-rays by their energy level.  This is critical for the function of \ac{edx} as the whole point is to determine chemical composition.  Typical detectors are made out of $Si(Li)$.
 
-\lipsum[6] % Dummy text
-
+The probability of an electron in the \ac{tem} beam ionizing an atom if your sample is dependent upon the ionization cross section.
 % section acedx_fundamentals (end)
 
 \section{Data Analysis} % (fold)
@@ -82,16 +81,6 @@ We collected bright field TEM images of a Iron Oxide ($Fe_3O_4$) particles coate
 Bright field images of Iron Oxide particles coated with Silicon dioxide were taken.  \ac{tem} imaging consists of illuminating thin samples that are semi electron transparent with a focused electron beam to project an image of the sample onto a viewing screen or camera.
 
 \lipsum[6] % Dummy text
-
-\lipsum[6] % Dummy text
-
-\lipsum[6] % Dummy text
-
-\lipsum[6] % Dummy text
-
-\lipsum[6] % Dummy text
-
-
 
 \begin{figure}[htbp]
   \centering
@@ -114,7 +103,7 @@ Bright field images of Iron Oxide particles coated with Silicon dioxide were tak
     \label{fig:zoom}
   \end{subfigure}
   
-  \caption{Bright field Images of $SiO_2$ coated $Fe_3O_4$ particles}\label{fig:brightfield}
+  \caption{Various views of Bright field Images of $SiO_2$ coated $Fe_3O_4$ particles}\label{fig:brightfield}
 \end{figure}
 
 % subsection tem_imaging (end)
@@ -206,7 +195,7 @@ Bright field images of Iron Oxide particles coated with Silicon dioxide were tak
 \section{Fityk Added to Homebrew} % (fold)
 \label{sec:fityk_homebrew}
 
-Upon discovering that newer Fityk versions were only offered as runnable binaries for paying subscribers, a simple \texttt{ruby} formula was submitted as a pull request to the Homebrew Science repository.  Homebrew is a popular 3rd party package manager for Mac OS X that manages the building and installation of open source software packages.  Upon the writing of this paper, the pull request was waiting for approval discussions with maintainers about acceptance sounded positive.  This will allow others to simply install the latest version of Fityk from the command line by running \texttt{\$ brew install fityk}.  A formula for the Fityk dependency, \texttt{xylib}, was also submitted to the \texttt{homebrew-science} repository.
+Upon discovering that newer Fityk versions were only offered as runnable binaries for paying subscribers, a simple \texttt{ruby} formula was submitted as a pull request to the Homebrew Science repository\cite{hbs}.  Homebrew\cite{home} is a popular 3rd party package manager for Mac OS X that manages the building and installation of open source software packages.  Upon the writing of this paper, the pull request was waiting for approval discussions with maintainers about acceptance sounded positive\cite{fpr}.  This will allow others to simply install the latest version of Fityk from the command line by running \texttt{\$ brew install fityk}.  A formula for the Fityk dependency, \texttt{xylib}, was also submitted to the \texttt{homebrew-science} repository\cite{xpr}.
 
 % section fityk_homebrew (end)
 
