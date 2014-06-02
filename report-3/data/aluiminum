@@ -1,0 +1,22 @@
+http://rruff.geo.arizona.edu/AMS/xtal_data/DIFfiles/12765.txt
+
+      Aluminum
+      Wyckoff R W G
+      Crystal Structures 1 (1963) 7-83
+      Second edition. Interscience Publishers, New York, New York
+      Cubic closest packed, ccp, structure
+      _database_code_amcsd 0011136
+
+      CELL PARAMETERS:   4.0496  4.0496  4.0496   90.000   90.000   90.000
+      SPACE GROUP: Fm3m      
+      X-RAY WAVELENGTH:     1.541838
+      MAX. ABS. INTENSITY / VOLUME**2:      34.61439413    
+               2-THETA      INTENSITY    D-SPACING   H   K   L   Multiplicity
+                38.50        100.00        2.3380    1   1   1         8
+                44.76         47.49        2.0248    2   0   0         6
+                65.16         28.01        1.4317    2   2   0        12
+                78.30         30.71        1.2210    3   1   1        24
+                82.52          8.74        1.1690    2   2   2         8
+================================================================================
+       XPOW Copyright 1993 Bob Downs, Ranjini Swaminathan and Kurt Bartelmehs
+  For reference, see Downs et al. (1993) American Mineralogist 78, 1104-1107.
