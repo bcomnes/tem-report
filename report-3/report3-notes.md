@@ -1,53 +1,43 @@
-Not really sure what happened with the formatting with that last email. 
-Things got very messed up for some reason. So here it is again, 
-hopefully in a less nonsensical way. 
-
-This will be a quite application based report, in the sense that I have 
-chosen to emphasize an analysis of the diffraction patterns that we 
-acquired in class. Since you haven't had any practice at this yet, I 
-found some good references for you to use, that should make the process 
-as easy as possible (note that I didn't say easy). The objectives 
-described below probably seem a bit intimidating at first, but aren't 
-that bad with the proper tools. I will be happy to answer any 
-questions.   
-  
-I have attached 4 diffraction ​patterns
- for you to include: 
-
+# Image descriptions
  1. aluminum polycrystalline pattern using SAED setting 2, 
  2. aluminum polycrystalline pattern using SAED setting 3, 
  3. single-crystalline silicon pattern at one zone axis, 
  4. single-crystalline silicon pattern at another zone axis. 
 
- selected area diffraction
+ 5. HRTEM image of of the gold foil
+ 6. silicon Kikuchi pattern
 
-The there is also one HRTEM image of of the gold foil, and-by request-an 
-image of the silicon Kikuchi pattern. ​The report should be written in article style ​
-again, and should address the following issues:
+# Assignment points
+
+[ImageJ](http://rsbweb.nih.gov/ij/index.html)
 
 1. ​A ​brief conceptual/theoretical description of diffraction pattern formation.    
+  - [theory](http://www.doitpoms.ac.uk/tlplib/diffraction-patterns/index.php)
 
-Compare the pattern of image 1 to image 2, and explain the cause of the difference.
+2. Compare the pattern of image 1 to image 2, and explain the cause of the difference.
 
-Measure the the d-spacing of the first 3 rings of image 2 and identify which plane 
-is causing the formation of each ring. 
+3. Measure the the d-spacing of the first three rings of image 2 and identify which plane is causing the formation of each ring. 
 
-Identify which crystal plane of the silicon is perpendicular to the electron beam for 
+  - drawing a circle precisely over the ring and get the dspacing from the radisu
+
+4. Identify which crystal plane of the silicon is perpendicular to the electron beam for 
 image 3 and for image 4 (image 4 is tricky--make your best guess).​  
 
-2. Measure and label the lattice spacing for one of the crystal planes 
+-[visualization](http://newton.umsl.edu/run/nano/known.html) 
+
+5. Measure and label the lattice spacing for one of the crystal planes 
 visible in the gold HRTEM image and verify that it matches an acceptable 
 value for gold.
 
-You should be able to find very helpful information about the
-[theory](http://www.doitpoms.ac.uk/tlplib/diffraction-patterns/index.php) for these things 
-using this website. And a very helpful [visualization]( ) of 
-the resulting diffraction pattern, for a particular crystal orientation of silicon, 
-is available here. This will be very helpful for objective 4 above. ​
+  - measure several-say 10-and then divide your measurement by 10 to get a more accurate result. ​
+  - Plot Profile-also under Analyze
 
-You will also need to download and install [ImageJ](http://rsbweb.nih.gov/ij/index.html), 
-which is free and useful. The procedure for analyzing an image is as follows:  
 
+
+## IamgeJ
+
+[ImageJ](http://rsbweb.nih.gov/ij/index.html)
+  
 1. Open the image in ImageJ
 2. Draw a line carefully over the scalebar
 3. Go the Analyze menu and select Set Scale...
@@ -55,30 +45,15 @@ which is free and useful. The procedure for analyzing an image is as follows:
 5. Change the Unit of length to 1/nm
 6. Click OK
 7. Draw a new line between two points that you would like to determine the distance between   
-
 8. Go to the Analyze menu and select Measure   
-
 9. Record the length value given (remember that it is in inverted nm)  
 
-​For measuring the distance between lattice fringes, you likely want to 
-measure several-say 10-and then divide your measurement by 10 to get a 
-more accurate result. ​
+# Crystal Information
 
-It is often helpful to use the Plot Profile-also under Analyze-which 
-shows you brightness of the pixels along your line as a function of 
-distance. 
 
-​This way you more easily count the number of planes your line has crossed. And 
-you can also draw a line and make measurements within the the plot profile. 
-
-For analyzing the polycrystalline samples, I've found that a more accurate 
-measurement can be found by drawing a circle precisely over the ring 
-that you are trying to measure instead drawing a line as in step 7. Then 
-when you select Measure from the Analyze menu, you can find the radius 
-of the ring using the Area value that is given.
-
-This site has [crystal information](http://rruff.geo.arizona.edu/AMS/amcsd.php) 
-that you will need. The data from these types of databases is typically from x-ray 
+- This site has [crystal information](http://rruff.geo.arizona.edu/AMS/amcsd.php) 
+that you will need. 
+- The data from these types of databases is typically from x-ray 
 diffraction measurements, so some things are irrelevant to us​, but will also have very 
 accurate lattice spacing information.For example, to find the lattice spacing information 
 for silicon, type silicon into the "Mineral" field and click Search. Look through the 
@@ -90,21 +65,8 @@ D-Spacing column and the H K L columns, which tells you, for example,
 that the spacing between the (1 1 1) planes of aluminum is 2.3333 
 angstrom. 
 
-Ok, so that was a report in
- itself, so I'm going let you have a go at it from here, and you can 
-send me questions where things are unclear.   
 
-Good luck,
-
-Si​mon
-
-
-
-Hey guys,
-It sounds like you guys need a little more time to work on the 3rd report. Go ahead and 
-take until Monday to turn it in. And if you aren't sure about the expectations, please ask 
-me questions via email. I will be out of town over the weekend though, so ask sooner rather 
-than later. 
+# Questions
 
 > I
  understand that we are using Bragg's law to determine the d spacing, 
