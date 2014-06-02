@@ -19,6 +19,8 @@ I have attached 4 diffraction ​patterns
  3. single-crystalline silicon pattern at one zone axis, 
  4. single-crystalline silicon pattern at another zone axis. 
 
+ selected area diffraction
+
 The there is also one HRTEM image of of the gold foil, and-by request-an 
 image of the silicon Kikuchi pattern. ​The report should be written in article style ​
 again, and should address the following issues:
@@ -39,10 +41,9 @@ value for gold.
 
 You should be able to find very helpful information about the
 [theory](http://www.doitpoms.ac.uk/tlplib/diffraction-patterns/index.php) for these things 
-using this website. And a very helpful [visualization](http://newton.umsl.edu/run/nano/known.html) of 
+using this website. And a very helpful [visualization]( ) of 
 the resulting diffraction pattern, for a particular crystal orientation of silicon, 
 is available here. This will be very helpful for objective 4 above. ​
-
 
 You will also need to download and install [ImageJ](http://rsbweb.nih.gov/ij/index.html), 
 which is free and useful. The procedure for analyzing an image is as follows:  
@@ -147,4 +148,67 @@ No
 
 just stick to main concepts. I'd like to see a pretty practical 
 approach here. You don't need to go into all the intricacies. More depth 
-and less breadth. that
+and less breadth.
+
+---
+
+
+Parallel rays are focused into a point in the bfp by the objective lens.
+
+the reflection method allows you to see the chemical differences in certain samples
+
+diffraction contrast (removing parts of the sample forming an imagez)
+thickness contrast affects the phase most.  ammount of atoms in actial specimin
+mass contrast (scattering)  the higher z (mass of nucleas) higher prob of scatter
+phase contrast
+
+enhanced thickness, but also magnetic domains kind of like loranze
+
+in situ tem (watching things happen in the tem)
+
+easiest way is just heating and cooling a sample and watching it.
+
+its hard because the holder is difficult to create and its also hard to get a camera capable of doing the right thing.
+
+
+What to know for the practical:
+
+basic alignment
+imaging
+stem mode
+ - we create a point and use the deflection coils to move the beam around.  
+edx spectroscopy
+aperatures
+  - c1 - condenser 1 below c1 lens that controlls spot size.  High spot szie beam is spread out low intensity.  1st aperature and its main function is to cut off the electrons that are incoherent.  We want the electrons in the center of the beam and cut off all the others.  
+  - c2 - mostly for controling brightness.  diffreaction patterns you dont want a high c2 setting because the points are so intense.  more brightness is good for imagaing though.
+  - objective - first form a diffrection, then use objectie app to pick a point to form an image.  used for doing high resolution stuff like lattice fringes.  increases contrast in our image.
+  - SAED - opposite of objective.  its im the image plane.  we find our image and we see the saed in our image.  we choose a spot in our image to create our diffraction pattern.  
+bright/dark/full
+
+selecting the center bright point, is the bright point and give is the bright field.  everything else is darkfield.
+
+diffraction
+ - xyz axis
+ say we have a 100 plane, its going to cross the x axis at 1, 0 at y and z.
+
+ parallel beams due to brag condition focused to diffraction points to create a pattern
+
+ tilting the sample moves the pattern
+ - hkl coresponds to 
+
+ term paper: 
+
+ journal article review:
+  not simple
+  something with at least intermediate tem skill
+
+
+  describe authors method and argument
+  what type of data was qcruired
+  bright field dark frield
+
+
+  due on the day of the final
+
+  
+
